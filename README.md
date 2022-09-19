@@ -33,7 +33,6 @@ This Front-End project was developed using the following technologies:
 
 -   [Typescript][typescript]
 -   [ViteJs][vitejs]
--   [Tailwind CSS][tailwindcss]
 -   [Phosphor Icons][phosphoricons]
 -   [Rc Slider][rc-slider]
 -   [Date fns][date-fns]
