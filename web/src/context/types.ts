@@ -33,4 +33,3 @@ export interface UserType {
     created_at: Date;
     updated_at: Date;
 }
-
