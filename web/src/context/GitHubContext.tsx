@@ -1,9 +1,11 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../lib/axios";
-import { UserType } from "./types";
+import { ISearchIssues, Items, UserType } from './types';
 
 interface IGitHubContext {
     user: UserType
+    searchIssues: ISearchIssues
+    issuesBlog: Items[]
 }
 
 const GitHubContext = createContext({} as IGitHubContext)
@@ -11,6 +13,8 @@ const GitHubContext = createContext({} as IGitHubContext)
 
 export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState({} as UserType)
+    const [searchIssues, setSearchIssues] = useState({} as ISearchIssues)
+    const [issuesBlog, setIssuesBlog] = useState<Items[]>([])
 
 
     const getUserGitBlog = async () => {
@@ -22,11 +26,14 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
-    const searchIssuesBlog = async (q: string, username = 'jeffersoncharlles', repo = 'blogrepository') => {
+    const searchIssuesBlog = async (q = '', username = 'jeffersoncharlles', repo = 'blogrepository') => {
         const { data } = await api.get(`search/issues?q=${q}%20repo:${username}/${repo}`)
-
+        console.log(data)
         if (data) {
-
+            setSearchIssues(data)
+            if (data.items) {
+                setIssuesBlog(data.items)
+            }
         }
     }
 
@@ -34,8 +41,12 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         getUserGitBlog()
     }, [])
 
+    useEffect(() => {
+        searchIssuesBlog()
+    }, [])
+
     return (
-        <GitHubContext.Provider value={{ user }}>
+        <GitHubContext.Provider value={{ user, searchIssues, issuesBlog }}>
             {children}
         </GitHubContext.Provider>
     )

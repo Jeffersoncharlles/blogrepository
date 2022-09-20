@@ -1,13 +1,18 @@
+import { Items } from '../../context/types';
 import {
-    Container,
+    CardContainer,
 } from './styles';
 
-export const Card = () => {
+interface IProps {
+    data: Items
+}
+
+export const Card = ({ data }: IProps) => {
 
     return (
-        <Container>
+        <CardContainer>
             <div>
-                <h3>JavaScript data types and data structures</h3>
+                <h3>{data.title}</h3>
                 <time>
                     Há 1 dia
                 </time>
@@ -16,6 +21,6 @@ export const Card = () => {
                 Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
             </p>
 
-        </Container>
+        </CardContainer>
     );
 }

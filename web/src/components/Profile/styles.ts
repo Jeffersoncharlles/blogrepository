@@ -24,12 +24,25 @@ export const ContentCardProfile = styled.div`
 
     P{
         margin-top: 8px;
+        font-weight: 400;
+        font-size: ${({ theme }) => theme.fonts[16]};
+        color: ${({ theme }) => theme.colors.baseText};
     }
 `;
 export const HeaderContainer = styled.header`
     padding-right: 32px;
     display: flex;
     justify-content: space-between;
+
+    h1{
+        font-weight: 700;
+        font-size: ${({ theme }) => theme.fonts[24]};
+        line-height: 1.3;
+    }
+
+    button{
+        gap: 8px;
+    }
 `;
 export const FooterContainer = styled.footer`
     margin-top: 24px;
