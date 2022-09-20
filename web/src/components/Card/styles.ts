@@ -24,6 +24,14 @@ export const CardContainer = styled.div`
 
         font-size: ${({ theme }) => theme.fonts[16]};
         color: ${({ theme }) => theme.colors.baseText};
-        word-break: break-all;
+
+        word-wrap: break-word;
+        white-space: pre-wrap;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+
+        overflow-y: hidden;
     }
 `;

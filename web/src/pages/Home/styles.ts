@@ -46,4 +46,10 @@ export const ArticleContainer = styled.article`
      grid-template-columns: 1fr 1fr;
      gap: 32px;
      padding-top: 48px;
+
+     a{
+          &:hover{
+                filter: brightness(.9);
+        }
+     }
 `;

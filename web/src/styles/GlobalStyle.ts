@@ -30,9 +30,7 @@ export const GlobalStyle = createGlobalStyle`
         color: inherit;
         transition: all .2s;
 
-        &:hover{
-                filter: brightness(.8);
-        }
+
     }
 
 `
