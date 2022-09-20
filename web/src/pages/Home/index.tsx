@@ -6,7 +6,7 @@ import { useGitHub } from '../../context/GitHubContext';
 
 
 export const Home = () => {
-    const { issuesBlog } = useGitHub()
+    const { article } = useGitHub()
 
     return (
         <HomeContainer>
@@ -18,15 +18,15 @@ export const Home = () => {
                 <div>
                     <div>
                         <strong>Publicações</strong>
-                        <span>6 publicações</span>
+                        <span>{article.length} publicações</span>
                     </div>
                     <input type='search' placeholder='Buscar conteúdo' />
                 </div>
 
-                {issuesBlog && (
+                {article && (
                     <ArticleContainer>
-                        {issuesBlog.map((item) => (
-                            <a key={item.id} href={`/post/${item.id}`}>
+                        {article.map((item) => (
+                            <a key={item.id} href={`/post/${item.slug}`}>
                                 <Card data={item} />
                             </a>
                         ))}

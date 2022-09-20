@@ -1,11 +1,21 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from "date-fns/locale";
 import { api } from "../lib/axios";
 import { ISearchIssues, Items, UserType } from './types';
+import slugify from "slugify";
 
 interface IGitHubContext {
     user: UserType
-    searchIssues: ISearchIssues
-    issuesBlog: Items[]
+    article: I_Article[]
+}
+interface I_Article {
+    title: string
+    url: string
+    date: string
+    content: string
+    id: number
+    slug: string
 }
 
 const GitHubContext = createContext({} as IGitHubContext)
@@ -13,8 +23,7 @@ const GitHubContext = createContext({} as IGitHubContext)
 
 export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState({} as UserType)
-    const [searchIssues, setSearchIssues] = useState({} as ISearchIssues)
-    const [issuesBlog, setIssuesBlog] = useState<Items[]>([])
+    const [article, setArticle] = useState<I_Article[]>([])
 
 
     const getUserGitBlog = async () => {
@@ -26,27 +35,37 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
-    const searchIssuesBlog = async (q = '', username = 'jeffersoncharlles', repo = 'blogrepository') => {
-        const { data } = await api.get(`search/issues?q=${q}%20repo:${username}/${repo}`)
-        console.log(data)
+    const searchIssuesBlog = async () => {
+
+    }
+
+    const getIssuesBlog = async () => {
+        const { data } = await api.get('repos/jeffersoncharlles/blogrepository/issues')
         if (data) {
-            setSearchIssues(data)
-            if (data.items) {
-                setIssuesBlog(data.items)
-            }
+            const blog = data.map((article: any) => ({
+                date: formatDistanceToNow(new Date(article.created_at), { locale: ptBR, addSuffix: true }),
+                title: article.title,
+                url: article.html_url,
+                content: article.body,
+                id: article.id,
+                slug: slugify(article.title, {
+                    replacement: '_',
+                    lower: true,
+                })
+            }))
+            console.log(blog)
+
+            setArticle(blog)
         }
     }
 
     useEffect(() => {
         getUserGitBlog()
-    }, [])
-
-    useEffect(() => {
-        searchIssuesBlog()
+        getIssuesBlog()
     }, [])
 
     return (
-        <GitHubContext.Provider value={{ user, searchIssues, issuesBlog }}>
+        <GitHubContext.Provider value={{ user, article }}>
             {children}
         </GitHubContext.Provider>
     )

@@ -6,7 +6,14 @@ import {
 } from './styles';
 
 interface IProps {
-    data: Items
+    data: {
+        title: string
+        url: string
+        date: string
+        content: string
+        id: number
+        slug: string
+    }
 }
 
 export const Card = ({ data }: IProps) => {
@@ -15,13 +22,13 @@ export const Card = ({ data }: IProps) => {
         <CardContainer>
             <div>
                 <h3>{data.title}</h3>
-                <time dateTime={data.closed_at}>
-                    Há 1 dia
+                <time dateTime={data.date}>
+                    {data.date}
 
                 </time>
             </div>
             <p>
-                {data.body}
+                {data.content}
             </p>
 
         </CardContainer>
