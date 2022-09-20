@@ -33,8 +33,18 @@ export const HeaderContainer = styled.header`
 `;
 export const FooterContainer = styled.footer`
     margin-top: 24px;
+    display: flex;
+
 
      span {
+        display: flex;
+        align-items: center;
+        text-align: center;
+
         margin-right: 24px;
+
+        svg{
+            margin-right: 8px;
+        }
     }
 `;
