@@ -40,8 +40,22 @@ export const HeaderContainer = styled.header`
         line-height: 1.3;
     }
 
-    button{
-        gap: 8px;
+    a{
+        font-size: ${({ theme }) => theme.fonts[14]};
+        color: ${({ theme }) => theme.colors.blue};
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        align-self: center;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+
+        &:hover{
+            filter: brightness(.8);
+        }
     }
 `;
 export const FooterContainer = styled.footer`

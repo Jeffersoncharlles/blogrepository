@@ -18,11 +18,10 @@ export const Profile = () => {
             <ContentCardProfile>
                 <HeaderContainer>
                     <h1>{user?.name}</h1>
-                    <button >
+                    <a href={user.html_url} target="_blank">
                         GitHub
                         <FaExternalLinkAlt />
-
-                    </button>
+                    </a>
                 </HeaderContainer>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque amet architecto itaque et dolorum doloribus omnis autem dignissimos. Laborum ipsa magni maxime cum repellendus nihil recusandae iure, sint incidunt eveniet.</p>
                 <FooterContainer>
