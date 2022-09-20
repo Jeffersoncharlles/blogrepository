@@ -1,4 +1,6 @@
 import { Items } from '../../context/types';
+import ReactMarkdown from 'react-markdown'
+import ReactDom from 'react-dom'
 import {
     CardContainer,
 } from './styles';

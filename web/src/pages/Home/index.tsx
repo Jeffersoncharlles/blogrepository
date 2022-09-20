@@ -23,11 +23,15 @@ export const Home = () => {
                     <input type='search' placeholder='Buscar conteúdo' />
                 </div>
 
-                <ArticleContainer>
-                    {issuesBlog.map((item) => (
-                        <Card key={item.id} data={item} />
-                    ))}
-                </ArticleContainer>
+                {issuesBlog && (
+                    <ArticleContainer>
+                        {issuesBlog.map((item) => (
+                            <a key={item.id} href={`/post/${item.id}`}>
+                                <Card data={item} />
+                            </a>
+                        ))}
+                    </ArticleContainer>
+                )}
             </SectionContainer>
 
         </HomeContainer>

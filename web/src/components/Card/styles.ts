@@ -21,7 +21,9 @@ export const CardContainer = styled.div`
     }
 
     p{
+
         font-size: ${({ theme }) => theme.fonts[16]};
         color: ${({ theme }) => theme.colors.baseText};
+        word-break: break-all;
     }
 `;
