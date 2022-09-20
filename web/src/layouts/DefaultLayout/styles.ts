@@ -7,10 +7,11 @@ export const LayoutContainer = styled.div`
 
 
 export const LayoutHeaderContainer = styled.div`
-    /* max-width: 1440px; */
 
     background: ${({ theme }) => theme.colors.baseProfile};
-    /* /* width: 100%; */
+    background-image: url('/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0 auto;
     display: flex;
     justify-content: center;
