@@ -17,6 +17,7 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         const { data } = await api.get('users/jeffersoncharlles')
 
         if (data) {
+
             setUser(data)
         }
     }

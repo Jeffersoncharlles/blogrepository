@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
 export const LayoutContainer = styled.div`
-    max-width: 1440px;
+
     margin: 0 auto;
-    background: ${({ theme }) => theme.colors.baseProfile};
 `;
 
 
-export const LayoutHeaderContainer = styled.div``;
+export const LayoutHeaderContainer = styled.div`
+    /* max-width: 1440px; */
+
+    background: ${({ theme }) => theme.colors.baseProfile};
+    /* /* width: 100%; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;

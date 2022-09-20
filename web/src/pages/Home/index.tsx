@@ -1,10 +1,17 @@
+import { HomeContainer } from './styles'
+
+import { Card } from "../../components/Card";
+import { Profile } from '../../components/Profile';
 
 
 export const Home = () => {
 
-    return(
-        <div>
+    return (
+        <HomeContainer>
+            <div>
+                <Profile />
+            </div>
 
-        </div>
+        </HomeContainer>
     );
 }

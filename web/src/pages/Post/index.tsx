@@ -1,10 +1,12 @@
+import { Card } from "../../components/Card";
 
 
 export const Post = () => {
 
-    return(
-        <div>
+    return (
+        <main>
 
-        </div>
+
+        </main>
     );
 }
