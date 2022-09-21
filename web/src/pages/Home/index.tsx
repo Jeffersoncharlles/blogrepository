@@ -12,13 +12,11 @@ export const Home = () => {
     const [filterInArticles, setFilterInArticles] = useState(article)
 
     const handleFilterArticles = (e: ChangeEvent<HTMLInputElement>) => {
-
         if (e.target.value) {
             setFilterInArticles(state => [...article.filter(item => item.title.includes(e.target.value))])
         } else {
             setFilterInArticles(article)
         }
-
     }
 
     useEffect(() => {
