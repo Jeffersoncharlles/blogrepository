@@ -12,20 +12,18 @@
   <a href="#key-license">License</a>
 </p>
 
-<!-- <h1 align='center'>
-  <img src='./screen/6HSwAb3aVQ.png' width="480">
-</h1> -->
+<h1 align='center'>
+  <img src='./screen/na5umldNn1.png' width="480">
+</h1>
 
 ## Getting Started BlogRepository
 
 First, run the development server:
 
 ```bash
-npm run dev 
-npm run server
+npm run dev
 # or
 yarn dev
-yarn server
 ```
 ## 🚀 Technologies:
 
@@ -33,9 +31,10 @@ This Front-End project was developed using the following technologies:
 
 -   [Typescript][typescript]
 -   [ViteJs][vitejs]
--   [Phosphor Icons][phosphoricons]
--   [Rc Slider][rc-slider]
+-   [React Icons][react-icons]
 -   [Date fns][date-fns]
+-   [Styled Components][styled]
+-   [React Router Dom][react-router-dom]
 
 This project in under MIT license, for more details check in [LICENSE][license]. <br>
 Feel free to bring new features or fix problems, it will be a pleasure! 💜
@@ -50,6 +49,7 @@ Feel free to bring new features or fix problems, it will be a pleasure! 💜
 [nextjs]: https://nextjs.org/
 [vitejs]: https://vitejs.dev/
 [styled]: https://styled-components.com/
+[react-router-dom]: https://reactrouter.com/
 [tailwindcss]: https://tailwindcss.com/
 [phosphoricons]: https://phosphoricons.com/
 [react-hook-form]: https://react-hook-form.com/
