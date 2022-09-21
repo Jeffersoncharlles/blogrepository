@@ -22,6 +22,7 @@ export const SectionContainer = styled.section`
                background: ${({ theme }) => theme.colors.baseInput};
                border:  1px solid #1C2F41;
                border-radius: 6px;
+               color: ${({ theme }) => theme.colors.baseText};
 
                font-size: 1rem;
                line-height: 1.6;

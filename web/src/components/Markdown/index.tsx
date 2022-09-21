@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
+import json from 'react-syntax-highlighter/dist/esm/languages/prism/json';
 import typescript from 'react-syntax-highlighter/dist/esm/languages/prism/typescript';
 import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
@@ -10,6 +11,7 @@ SyntaxHighlighter.registerLanguage('tsx', tsx)
 SyntaxHighlighter.registerLanguage('jsx', jsx)
 SyntaxHighlighter.registerLanguage('typescript', typescript)
 SyntaxHighlighter.registerLanguage('javascript', javascript)
+SyntaxHighlighter.registerLanguage('json', json)
 
 
 export const Markdown = ({ markdown }: { markdown: string }) => {
