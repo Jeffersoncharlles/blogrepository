@@ -16,6 +16,20 @@
   <img src='./screen/na5umldNn1.png' width="480">
 </h1>
 
+## PREVIEW
+<button style="
+    background:#3294F8;
+    border:none;
+    border-radius: 4px;
+    width: 90px;
+    height: 30px;
+    cursor:pointer;
+    ">
+  <a style="text-decoration:none;color:white;font-weight:bold;"
+    href="https://blogrepository.vercel.app/"
+    >Deploy</a>
+</button>
+
 ## Getting Started BlogRepository
 
 First, run the development server:
