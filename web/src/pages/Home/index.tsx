@@ -3,6 +3,7 @@ import { HomeContainer, ArticleContainer, SectionContainer } from './styles'
 import { Card } from "../../components/Card";
 import { Profile } from '../../components/Profile';
 import { useGitHub } from '../../context/GitHubContext';
+import { Link } from 'react-router-dom';
 
 
 export const Home = () => {
@@ -26,9 +27,9 @@ export const Home = () => {
                 {article && (
                     <ArticleContainer>
                         {article.map((item) => (
-                            <a key={item.id} href={`/post/${item.slug}`}>
+                            <Link key={item.id} to={`/post/${item.slug}`}>
                                 <Card data={item} />
-                            </a>
+                            </Link>
                         ))}
                     </ArticleContainer>
                 )}

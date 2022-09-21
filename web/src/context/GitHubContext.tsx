@@ -7,9 +7,10 @@ import slugify from "slugify";
 
 interface IGitHubContext {
     user: UserType
-    article: I_Article[]
+    article: IArticle[]
+    getOneArticle(slug: string): IArticle
 }
-interface I_Article {
+interface IArticle {
     title: string
     url: string
     date: string
@@ -23,7 +24,7 @@ const GitHubContext = createContext({} as IGitHubContext)
 
 export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState({} as UserType)
-    const [article, setArticle] = useState<I_Article[]>([])
+    const [article, setArticle] = useState<IArticle[]>([])
 
 
     const getUserGitBlog = async () => {
@@ -35,8 +36,9 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
-    const searchIssuesBlog = async () => {
-
+    const getOneArticle = (slug: string): IArticle => {
+        const post = article.find(item => item.slug === slug)
+        return post!
     }
 
     const getIssuesBlog = async () => {
@@ -65,7 +67,7 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
     }, [])
 
     return (
-        <GitHubContext.Provider value={{ user, article }}>
+        <GitHubContext.Provider value={{ user, article, getOneArticle }}>
             {children}
         </GitHubContext.Provider>
     )
