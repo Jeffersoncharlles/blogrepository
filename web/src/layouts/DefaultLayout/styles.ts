@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const LayoutContainer = styled.div`
-
     margin: 0 auto;
 `;
 
@@ -16,4 +15,11 @@ export const LayoutHeaderContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width:1024px) {
+        background-position: center;
+    }
+    @media (max-width:768px) {
+        background-size: auto;
+    }
 `;

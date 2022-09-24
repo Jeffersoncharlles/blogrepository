@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
 
+
+
+
     background-color: ${({ theme }) => theme.colors.basePost};
     border-radius: 10px;
     padding: 32px;
@@ -33,5 +36,32 @@ export const CardContainer = styled.div`
         -webkit-box-orient: vertical;
 
         overflow-y: hidden;
+    }
+
+
+    @media (max-width:768px) {
+       padding: 16px;
+
+       >div{
+            margin-bottom: 16px;
+
+            h3{
+                font-size: ${({ theme }) => theme.fonts[12]};
+            }
+
+
+       }
+
+       p{
+        font-size: ${({ theme }) => theme.fonts[12]};
+        word-wrap: break-word;
+        white-space: pre-wrap;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        overflow-y: hidden;
+       }
     }
 `;

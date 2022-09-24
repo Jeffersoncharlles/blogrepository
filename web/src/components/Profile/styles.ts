@@ -16,6 +16,18 @@ export const ProfileContainer = styled.section`
         height: 148px;
         }
     }
+
+    @media  (max-width:425px) {
+        picture{
+        padding-right: 32px;
+        padding-left: 40px;
+
+            img{
+                width: 48px;
+                height: 48px;
+            }
+        }
+    }
 `;
 export const ContentCardProfile = styled.div`
     display: flex;
@@ -27,6 +39,27 @@ export const ContentCardProfile = styled.div`
         font-weight: 400;
         font-size: ${({ theme }) => theme.fonts[16]};
         color: ${({ theme }) => theme.colors.baseText};
+    }
+
+    @media (max-width:768px) {
+        p{
+            font-size: ${({ theme }) => theme.fonts[14]};
+            margin-right: 18px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+
+            overflow-y: hidden;
+        }
+    }
+
+   @media  (max-width:425px) {
+        p{
+            display: none;
+        }
     }
 `;
 export const HeaderContainer = styled.header`
@@ -57,6 +90,12 @@ export const HeaderContainer = styled.header`
             filter: brightness(.8);
         }
     }
+
+    @media  (max-width:425px) {
+        h1{
+            font-size: ${({ theme }) => theme.fonts[14]};
+        }
+    }
 `;
 export const FooterContainer = styled.footer`
     margin-top: 24px;
@@ -74,4 +113,14 @@ export const FooterContainer = styled.footer`
             margin-right: 8px;
         }
     }
+
+    @media (max-width:768px) {
+        margin-top: 16px;
+
+        span{
+            font-size: ${({ theme }) => theme.fonts[12]};
+        }
+    }
+
+
 `;
