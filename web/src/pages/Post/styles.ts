@@ -4,7 +4,11 @@ export const PostContainer = styled.main`
     width: min(1440px, 100%);
     margin: 0 auto;
     margin-bottom: 48px;
+    padding: 16px;
 
+    @media  (max-width:425px) {
+        padding: 12px;
+    }
 
 `;
 
@@ -23,6 +27,17 @@ export const CardContainer = styled.div`
     h1{
         font-size: ${({ theme }) => theme.fonts[24]};
         line-height: 1.3;
+
+    }
+
+    @media  (max-width:425px) {
+        padding: 16px;
+
+        h1{
+            font-size: ${({ theme }) => theme.fonts[16]};
+            line-height: 1.6;
+        }
+
 
     }
 `;
@@ -66,6 +81,12 @@ export const InfoContainer = styled.div`
 
         svg{
             margin-right: 8px;
+        }
+    }
+
+    @media  (max-width:425px) {
+        span{
+            font-size: ${({ theme }) => theme.fonts[12]};
         }
     }
 `;

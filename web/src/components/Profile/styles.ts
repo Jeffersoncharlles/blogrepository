@@ -18,13 +18,15 @@ export const ProfileContainer = styled.section`
     }
 
     @media  (max-width:425px) {
+        padding: 24px 0;
+
         picture{
-        padding-right: 32px;
-        padding-left: 40px;
+        padding-right: 16px;
+        padding-left: 18px;
 
             img{
-                width: 48px;
-                height: 48px;
+                width: 82px;
+                height: 82px;
             }
         }
     }
@@ -58,7 +60,7 @@ export const ContentCardProfile = styled.div`
 
    @media  (max-width:425px) {
         p{
-            display: none;
+           margin-top: 4px; /* display: none; */
         }
     }
 `;
@@ -92,10 +94,17 @@ export const HeaderContainer = styled.header`
     }
 
     @media  (max-width:425px) {
+        /* padding-right: 16px; */
+        gap: 16px;
         h1{
             font-size: ${({ theme }) => theme.fonts[14]};
         }
+
+        a {
+            font-size: ${({ theme }) => theme.fonts[12]};
+        }
     }
+
 `;
 export const FooterContainer = styled.footer`
     margin-top: 24px;
@@ -122,5 +131,10 @@ export const FooterContainer = styled.footer`
         }
     }
 
+    @media  (max-width:425px) {
 
+        span{
+            display: none;
+        }
+    }
 `;
